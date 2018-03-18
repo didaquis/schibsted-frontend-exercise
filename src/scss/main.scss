@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+@import '_reset';
+@import '_fonts';
+@import '_colors';
+
+$spacer-medium: 12px;
+
+body {
+	background-color: $body-color;
+}
+
+.Accordion {
+	background-color: $main-color;
+	color: $secondary-color;
+	width: 94%;
+	margin: $spacer-medium * 2 auto;
+	font-family: 'Noto Sans', 'Open Sans', sans-serif;
+	border-radius: $spacer-medium $spacer-medium 0 0;
+	
+	&-dt:first-of-type {
+		border-radius: $spacer-medium $spacer-medium 0 0;
+	}
+
+	&-dt {
+		padding: $spacer-medium * 2;
+		text-transform: capitalize;
+		font-size: 1.15em;
+		&:hover {
+			background-color: $secondary-color;
+			color: $main-color;
+			cursor: pointer;
+		}
+	}
+
+	&-dt.is-animated {
+		@keyframes addingElement {
+			0% {
+				transform: translatey(-30%);
+			}
+			100% {
+				transform: translatey(0);
+			}
+		}
+
+		animation: 0.5s ease-out 0s 1 addingElement;
+	}
+
+	&-dd {
+		background-color: $secondary-color;
+		color: $light-color;
+		overflow: hidden;
+		padding: 0 1em;
+		max-height: 0;
+		opacity: 0;
+	}
+	&-dd.is-expanded {
+		max-height: 400px;
+		overflow-y: auto;
+		opacity: 1;
+		padding: $spacer-medium $spacer-medium * 2;
+		transition: all 0.4s ease-out;
+		box-sizing: border-box;
+		border: {
+			top: 1px solid $main-color;
+			bottom: 1px solid $main-color;
+		}
+	}
+}

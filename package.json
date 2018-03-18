@@ -1,0 +1,19 @@
+{
+  "name": "schibsted-frontend-exercise",
+  "version": "1.0.0",
+  "description": "Schibsted frontend exercise, 2018",
+  "main": "",
+  "scripts": {
+    "test": "echo Run test in browser. File: test/SpecRunner.html",
+    "build_css": "sass src/scss/main.scss public/styles/main.css --style compressed",
+    "deploy": "git subtree push --prefix public origin gh-pages"
+  },
+  "keywords": [
+    "Schibsted",
+    "Exercise",
+    "Accordion"
+  ],
+  "author": "Dídac García",
+  "license": "ISC",
+  "devDependencies": {}
+}
